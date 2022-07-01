@@ -76,7 +76,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'com.github.AnglePengCoding'
-                artifactId = 'Android-XMvp'
+                artifactId = 'Android-xmvp'
                 version = '1.0'
             }
         }
