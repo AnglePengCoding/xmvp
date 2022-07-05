@@ -23,6 +23,7 @@
 maven{url'https://jitpack.io'}
 
 ```
+[![](https://jitpack.io/v/AnglePengCoding/xmvp.svg)](https://jitpack.io/#AnglePengCoding/xmvp)
 
 <h3> Step 2. Add the dependency 以最新版本为准 </h3>
 
