@@ -31,7 +31,7 @@ maven{url'https://jitpack.io'}
 
 
 ```java
-  implementation 'com.github.AnglePengCoding:Android-XMvp:tag'
+  implementation 'com.github.AnglePengCoding:xmvp:tag'
 ```
 <h3> 沉浸式使用 </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/statusbar.md">沉浸式使用</a></p>
