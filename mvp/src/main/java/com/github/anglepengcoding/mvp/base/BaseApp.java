@@ -9,7 +9,6 @@ import com.github.anglepengcoding.mvp.utils.Utils;
 
 import me.jessyan.autosize.AutoSize;
 import me.jessyan.autosize.AutoSizeConfig;
-import retrofit2.Converter;
 
 
 /**

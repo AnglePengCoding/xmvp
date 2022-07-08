@@ -65,8 +65,8 @@ dependencies {
     api 'com.contrarywind:Android-PickerView:4.1.9'
     api 'io.github.lucksiege:pictureselector:v3.0.5'
     api 'io.github.lucksiege:compress:v3.0.5'
-    api 'me.jessyan:autosize:0.9.5'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
 }
 
 afterEvaluate {
