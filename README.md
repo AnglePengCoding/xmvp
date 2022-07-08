@@ -23,6 +23,7 @@
 maven{url'https://jitpack.io'}
 
 ```
+[![](https://jitpack.io/v/AnglePengCoding/xmvp.svg)](https://jitpack.io/#AnglePengCoding/xmvp)
 
 <h3> Step 2. Add the dependency 以最新版本为准 </h3>
 
@@ -30,7 +31,7 @@ maven{url'https://jitpack.io'}
 
 
 ```java
-  implementation 'com.github.AnglePengCoding:Android-XMvp:tag'
+  implementation 'com.github.AnglePengCoding:xmvp:tag'
 ```
 <h3> 沉浸式使用 </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/statusbar.md">沉浸式使用</a></p>
