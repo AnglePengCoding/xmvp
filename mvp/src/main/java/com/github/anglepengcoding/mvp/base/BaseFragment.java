@@ -64,23 +64,27 @@ public abstract class BaseFragment<T extends ViewBinding,
         mContext = context;
         super.onAttach(context);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.e(TAG, "--->Fragment onCreateView()<---");
-        return initBinding();
+        return getRootView(container);
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.e(TAG, "--->Fragment onCreate()<---");
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Log.e(TAG, "--->Fragment onViewCreated()<---");
         mPresenter = TUtil.getT(this, 1);
         mModel = TUtil.getT(this, 2);
         if (this instanceof BaseView) mPresenter.attachVM(this, mModel, mContext);
         initView();
         initPresenter();
         setListeners();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.e(TAG, "--->Fragment onCreate()<---");
     }
 
 
@@ -218,14 +222,13 @@ public abstract class BaseFragment<T extends ViewBinding,
         return mActivity;
     }
 
-
-    private View initBinding() {
+    private View getRootView( ViewGroup container){
+        Type superclass = getClass().getGenericSuperclass();
+        Class<?> aClass = (Class<?>) ((ParameterizedType) superclass).getActualTypeArguments()[0];
         try {
-            Type superclass = getClass().getGenericSuperclass();
-            Class<?> aClass = (Class<?>) ((ParameterizedType) superclass).getActualTypeArguments()[0];
-            Method method = aClass.getMethod("inflate", LayoutInflater.class);
-            binding = (T) method.invoke(null, getLayoutInflater());
-        } catch (Exception e) {
+            Method method = aClass.getDeclaredMethod("inflate", LayoutInflater.class,ViewGroup.class,boolean.class);
+            binding = (T) method.invoke(null, getLayoutInflater(),container,false);
+        } catch (NoSuchMethodException | IllegalAccessException| InvocationTargetException e) {
             e.printStackTrace();
         }
         return binding.getRoot();

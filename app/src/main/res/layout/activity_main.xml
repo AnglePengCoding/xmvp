@@ -1,83 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:fitsSystemWindows="false"
+    android:background="#F3F9FE"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher"
+    <com.github.anglepengcoding.xmvp.widget.tab.SlidingTabLayout
+        android:id="@+id/tab"
+        tl:tl_indicator_width="0dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
-    <EditText
-        android:hint="1"
+        android:layout_height="@dimen/dp_50"
+        tl:tl_tab_padding="5dp"
+        tl:tl_textSelectColor="#2E81FF"
+        tl:tl_textUnselectColor="#8CA0CD"
+        tl:tl_textsize="13dp">
+    </com.github.anglepengcoding.xmvp.widget.tab.SlidingTabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="12"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:hint="13"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:onClick="save"
-        android:text="保存数据"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:onClick="read"
-        android:text="读取数据"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/mTvRead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="match_parent">
+    </androidx.viewpager.widget.ViewPager>
 </LinearLayout>
