@@ -14,7 +14,7 @@
 <h4>  8：支持重构接收体</h4>
 <h4>  9：屏幕适配</h4>
 <h4>  10：app下载更新</h4>
-
+<h4>  11：RxBinding 控件点击防抖动</h4>
 <h3>如何使用？</h3>
 
 <h3> Step 1.  在工程目录加入settings.gradle </h3>
@@ -118,3 +118,4 @@ maven{url'https://jitpack.io'}
 <p dir="auto"><a href="https://github.com/Yalantis/uCrop">yalantis:ucrop:2.2.6</a></p>
 <p dir="auto"><a href="https://github.com/bumptech/glide">glide:4.13.0</a></p>
 <p dir="auto"><a href="https://github.com/azhon/AppUpdate">AppUpdate 4.2.0</a></p>
+<p dir="auto"><a href="https://github.com/JakeWharton/RxBinding">RxBinding 4.0.0</a></p>

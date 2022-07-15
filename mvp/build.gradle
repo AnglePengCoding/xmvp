@@ -67,7 +67,8 @@ dependencies {
     api 'io.github.lucksiege:compress:v3.0.5'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
     api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
-    implementation 'com.github.azhon:AppUpdate:4.2.0'
+    api 'com.github.azhon:AppUpdate:4.2.0'
+    api 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
 }
 
 afterEvaluate {
