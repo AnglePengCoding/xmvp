@@ -13,6 +13,7 @@
 <h4>  7：AppCompatActivity，Rxjava，网络请求周期处理</h4>
 <h4>  8：支持重构接收体</h4>
 <h4>  9：屏幕适配</h4>
+<h4>  10：app下载更新</h4>
 
 <h3>如何使用？</h3>
 
@@ -76,6 +77,10 @@ maven{url'https://jitpack.io'}
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/full.md">多图上传</a></p>
 
 
+<h3> app更新下载 </h3>
+<p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/up.md">app更新下载</a></p>
+
+
 <h2> XMvp-Demo地址免积分下载 </h2>
 <li><a href="https://download.csdn.net/download/LIU_HONGPENG/82202554" rel="nofollow">XMvpDemo下载</a></li>
 
@@ -112,3 +117,4 @@ maven{url'https://jitpack.io'}
 <p dir="auto"><a href="https://github.com/square/okhttp">retrofit-adapter:3.0.0</a></p>
 <p dir="auto"><a href="https://github.com/Yalantis/uCrop">yalantis:ucrop:2.2.6</a></p>
 <p dir="auto"><a href="https://github.com/bumptech/glide">glide:4.13.0</a></p>
+<p dir="auto"><a href="https://github.com/azhon/AppUpdate">AppUpdate 4.2.0</a></p>

@@ -44,6 +44,16 @@
         <meta-data
             android:name="design_height_in_dp"
             android:value="640"/>
+
+
+        <receiver
+            android:name=".receiver.BaseReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 
