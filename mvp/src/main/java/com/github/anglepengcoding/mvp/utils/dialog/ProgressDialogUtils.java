@@ -15,15 +15,18 @@ public class ProgressDialogUtils {
     private static ProgressDialogUtils instance;
     private PictureDialog dialog;
 
-    public static synchronized ProgressDialogUtils $() {
+    public static synchronized ProgressDialogUtils $(Context context) {
         if (null == instance) {
-            instance = new ProgressDialogUtils();
+            instance = new ProgressDialogUtils(context);
         }
         return instance;
     }
 
-    public void showProgress(Context context) {
+    public ProgressDialogUtils(Context context) {
         dialog = new PictureDialog(context);
+    }
+
+    public void showProgress() {
         dialog.show();
     }
 

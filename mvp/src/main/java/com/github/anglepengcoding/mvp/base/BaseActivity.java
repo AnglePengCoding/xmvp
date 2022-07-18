@@ -1,6 +1,5 @@
 package com.github.anglepengcoding.mvp.base;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -22,8 +21,9 @@ import com.github.anglepengcoding.mvp.utils.Logg;
 import com.github.anglepengcoding.mvp.utils.TUtil;
 import com.github.anglepengcoding.mvp.utils.bar.StatusBar;
 import com.github.anglepengcoding.mvp.utils.net.NetworkUtils;
-import com.github.anglepengcoding.mvp.utils.permission.PermissionUtils;
 import com.luck.picture.lib.utils.ToastUtils;
+import com.tbruyelle.rxpermissions3.Permission;
+import com.tbruyelle.rxpermissions3.RxPermissions;
 
 
 import java.lang.reflect.InvocationTargetException;
@@ -35,6 +35,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewbinding.ViewBinding;
+import io.reactivex.rxjava3.functions.Consumer;
 import me.jessyan.autosize.internal.CustomAdapt;
 
 import static android.content.ContentValues.TAG;
@@ -54,7 +55,6 @@ public abstract class BaseActivity<T extends ViewBinding,
     public P mPresenter;
     public M mModel;
     protected Context mContext;
-
     /** 标题栏默认隐藏   baseBinding.mRlTitleLayout.setVisibility(View.VISIBLE);  */
     /**
      * 设置标题栏可以使用baseBinding  baseBinding.mTitleText.setText("");
@@ -238,17 +238,6 @@ public abstract class BaseActivity<T extends ViewBinding,
         startActivity(intent);
     }
 
-    /**
-     * 申请运行权限
-     *
-     * @param callback    权限回调
-     * @param permissions 运行权限
-     */
-    public void requestRunPermission(final PermissionUtils.FullCallback callback, final String... permissions) {
-        PermissionUtils permissionUtils = PermissionUtils.permission(permissions);
-        permissionUtils.request();
-        permissionUtils.callback(callback);
-    }
 
     @Override
     public void showDataException(String msg) {
@@ -274,7 +263,7 @@ public abstract class BaseActivity<T extends ViewBinding,
         if (!NetworkUtils.isConnected()) {
             showToast("请检查手机网络连接");
         } else {
-            showToast("访问地址出错");
+            showToast("访问域名失败");
         }
     }
 
@@ -306,4 +295,11 @@ public abstract class BaseActivity<T extends ViewBinding,
         }
     }
 
+    public interface RequestPermissions {
+        void granted(Permission p);
+
+        void shouldShowRequestPermissionRationale(Permission p);
+
+        void refuse(Permission p);
+    }
 }

@@ -1,6 +1,7 @@
 package com.github.anglepengcoding.mvp.widget.dialog;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.view.Window;
 import android.view.WindowManager;

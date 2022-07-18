@@ -2,6 +2,7 @@ package com.github.anglepengcoding.mvp.base;
 
 
 import android.app.Activity;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 
@@ -13,9 +14,9 @@ import androidx.annotation.NonNull;
 public interface BaseUiInterface {
     String ERROR_CODE = "NullPointerException";
 
+    Context getContext();
     @NonNull
     Activity getAActivity();
-
     /**
      * 无网络连接
      */

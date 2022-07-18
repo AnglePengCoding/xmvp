@@ -8,7 +8,4 @@ import android.content.Context;
  * <p>https://blog.csdn.net/LIU_HONGPENG</p>
  */
 public interface BaseView extends BaseUiInterface{
-
-    Context getContext();
-
 }

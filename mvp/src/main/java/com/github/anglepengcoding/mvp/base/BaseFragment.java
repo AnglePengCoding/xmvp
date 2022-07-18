@@ -3,25 +3,21 @@ package com.github.anglepengcoding.mvp.base;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 
-import com.github.anglepengcoding.mvp.R;
-import com.github.anglepengcoding.mvp.databinding.FragmentBaseBinding;
 import com.github.anglepengcoding.mvp.utils.Logg;
 import com.github.anglepengcoding.mvp.utils.TUtil;
 import com.github.anglepengcoding.mvp.utils.bar.StatusBar;
 import com.github.anglepengcoding.mvp.utils.net.NetworkUtils;
-import com.github.anglepengcoding.mvp.utils.permission.PermissionConstants;
-import com.github.anglepengcoding.mvp.utils.permission.PermissionUtils;
 import com.luck.picture.lib.utils.ToastUtils;
+import com.tbruyelle.rxpermissions3.Permission;
+import com.tbruyelle.rxpermissions3.RxPermissions;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -30,14 +26,10 @@ import java.lang.reflect.Type;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.OnLifecycleEvent;
 import androidx.viewbinding.ViewBinding;
+import io.reactivex.rxjava3.functions.Consumer;
 import me.jessyan.autosize.internal.CustomAdapt;
 
 import static android.content.ContentValues.TAG;
@@ -169,19 +161,6 @@ public abstract class BaseFragment<T extends ViewBinding,
         startActivity(intent);
     }
 
-    /**
-     * 申请运行权限
-     *
-     * @param callback    权限回调
-     * @param permissions 运行权限
-     */
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void requestRunPermission(final PermissionUtils.FullCallback callback, @PermissionConstants.Permission final String... permissions) {
-        PermissionUtils permissionUtils = PermissionUtils.permission(permissions);
-        permissionUtils.request();
-        permissionUtils.callback(callback);
-    }
-
 
     @Override
     public void showNoNetworkConnection() {
@@ -232,5 +211,13 @@ public abstract class BaseFragment<T extends ViewBinding,
             e.printStackTrace();
         }
         return binding.getRoot();
+    }
+
+    public interface RequestPermissions {
+        void granted(Permission p);
+
+        void shouldShowRequestPermissionRationale(Permission p);
+
+        void refuse(Permission p);
     }
 }

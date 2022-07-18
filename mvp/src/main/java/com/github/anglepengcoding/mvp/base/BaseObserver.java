@@ -48,12 +48,12 @@ public abstract class BaseObserver<E extends BaseResponse> implements Observer<E
     }
 
     private void showLoadingDialog() {
-        ProgressDialogUtils.$().showProgress(mUiInterface.getAActivity());
+        ProgressDialogUtils.$(mUiInterface.getContext()).showProgress();
     }
 
     @Override
     public void onComplete() {
-        ProgressDialogUtils.$().dismissProgress();
+        ProgressDialogUtils.$(mUiInterface.getContext()).dismissProgress();
     }
 
     @Override
@@ -82,7 +82,7 @@ public abstract class BaseObserver<E extends BaseResponse> implements Observer<E
     @Override
     public void onError(@NonNull Throwable throwable) {
         handleError(throwable, mUiInterface, LOG_TAG);
-        ProgressDialogUtils.$().dismissProgress();
+        ProgressDialogUtils.$(mUiInterface.getContext()).dismissProgress();
     }
 
 
