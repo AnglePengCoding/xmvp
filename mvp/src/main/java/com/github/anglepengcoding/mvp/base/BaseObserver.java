@@ -1,6 +1,7 @@
 package com.github.anglepengcoding.mvp.base;
 
 
+import android.graphics.Color;
 import android.text.TextUtils;
 
 import com.github.anglepengcoding.mvp.net.ResultException;
@@ -9,6 +10,7 @@ import com.github.anglepengcoding.mvp.utils.dialog.ProgressDialogUtils;
 import com.github.anglepengcoding.mvp.utils.net.NetworkUtils;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.stream.MalformedJsonException;
+import com.yk.loading.LoadingDialog;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;
@@ -28,6 +30,7 @@ import retrofit2.HttpException;
 public abstract class BaseObserver<E extends BaseResponse> implements Observer<E> {
     protected final String LOG_TAG = getClass().getSimpleName();
     private final BaseUiInterface mUiInterface;
+    private LoadingDialog dialog;
 
     public BaseObserver(BaseUiInterface baseUiInterface) {
         mUiInterface = baseUiInterface;
@@ -48,12 +51,20 @@ public abstract class BaseObserver<E extends BaseResponse> implements Observer<E
     }
 
     private void showLoadingDialog() {
-        ProgressDialogUtils.$(mUiInterface.getContext()).showProgress();
+        LoadingDialog.Builder loadBuilder = new LoadingDialog.Builder(mUiInterface.getContext())
+                .setMessage("加载中...")//设置提示文字
+                .setCancelable(true)//按返回键取消
+                .setMessageColor(Color.WHITE)//提示文字颜色
+                .setMessageSize(14)//提示文字字号
+                .setBackgroundTransparent(true)//弹窗背景色是透明或半透明
+                .setCancelOutside(true);//点击空白区域弹消失
+        dialog = loadBuilder.create();
+        dialog.show();
     }
 
     @Override
     public void onComplete() {
-        ProgressDialogUtils.$(mUiInterface.getContext()).dismissProgress();
+        dialog.dismiss();
     }
 
     @Override
@@ -82,7 +93,7 @@ public abstract class BaseObserver<E extends BaseResponse> implements Observer<E
     @Override
     public void onError(@NonNull Throwable throwable) {
         handleError(throwable, mUiInterface, LOG_TAG);
-        ProgressDialogUtils.$(mUiInterface.getContext()).dismissProgress();
+        dialog.dismiss();
     }
 
 
