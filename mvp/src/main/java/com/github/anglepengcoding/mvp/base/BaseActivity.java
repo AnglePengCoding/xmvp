@@ -64,7 +64,7 @@ public abstract class BaseActivity<T extends ViewBinding,
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e(TAG, "--->Activity onCreate()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onCreate()<---");
         mBar = StatusBar.with(this);
         mBar.transparentStatusBar()
                 .fitsSystemWindows(true)
@@ -111,7 +111,7 @@ public abstract class BaseActivity<T extends ViewBinding,
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.e(TAG, "--->Activity onNewIntent()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onNewIntent()<---");
         parseIntentData(intent, true);
     }
 
@@ -158,31 +158,31 @@ public abstract class BaseActivity<T extends ViewBinding,
     @Override
     protected void onStart() {
         super.onStart();
-        Log.e(TAG, "--->Activity onStart()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onStart()<---");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.e(TAG, "--->Activity onRestart()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onRestart()<---");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.e(TAG, "--->Activity onResume()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onResume()<---");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.e(TAG, "--->Activity onPause()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onPause()<---");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e(TAG, "--->Activity onDestroy()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onDestroy()<---");
         if (mBar != null) mBar.destroy();
         if (mPresenter != null) mPresenter.detachVM();
         AppManager.getAppManager().finishActivity(this);

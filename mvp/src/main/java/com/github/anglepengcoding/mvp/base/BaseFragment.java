@@ -64,7 +64,7 @@ public abstract class BaseFragment<T extends ViewBinding,
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.e(TAG, "--->Fragment onViewCreated()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onViewCreated()<---");
         mPresenter = TUtil.getT(this, 1);
         mModel = TUtil.getT(this, 2);
         if (this instanceof BaseView) mPresenter.attachVM(this, mModel, mContext);
@@ -76,7 +76,7 @@ public abstract class BaseFragment<T extends ViewBinding,
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e(TAG, "--->Fragment onCreate()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onCreate()<---");
     }
 
 
@@ -100,32 +100,32 @@ public abstract class BaseFragment<T extends ViewBinding,
     @Override
     public void onStart() {
         super.onStart();
-        Log.e(TAG, "--->Fragment onStart()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onStart()<---");
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.e(TAG, "--->Fragment onResume()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onResume()<---");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        Log.e(TAG, "--->Fragment onPause()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onPause()<---");
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        Log.e(TAG, "--->Fragment onStop()<---");
+        Log.e(TAG, getClass().getSimpleName() + "---> onStop()<---");
     }
 
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.e(TAG, "--->Fragment onDestroy()<---");
+        Log.e(TAG, getClass().getSimpleName() + "--->Fragment onDestroy()<---");
         if (mBar != null) mBar.destroy();
         if (mPresenter != null) mPresenter.detachVM();
     }
@@ -167,7 +167,7 @@ public abstract class BaseFragment<T extends ViewBinding,
         if (!NetworkUtils.isConnected()) {
             showToast("请检查手机网络连接");
         } else {
-            showToast("访问地址出错");
+            showToast("访问域名失败");
         }
     }
 

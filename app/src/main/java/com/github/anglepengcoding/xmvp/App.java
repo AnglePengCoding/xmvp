@@ -13,7 +13,7 @@ public class App extends BaseApp {
 
     @Override
     public String setBaseUrl() {
-        return null;
+       return  "http://app.gzdp.creditmoa.com/";
     }
 
     @Override

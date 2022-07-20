@@ -29,7 +29,6 @@ public class SoilFragment extends BaseFragment<FragmentSoilBinding, SoilPresente
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        binding.mTv.setText("Yuang");
     }
 
     @Override
@@ -40,4 +39,11 @@ public class SoilFragment extends BaseFragment<FragmentSoilBinding, SoilPresente
     public void initPresenter() {
     }
 
+    @Override
+    protected void setListeners() {
+        super.setListeners();
+        binding.mBt.setOnClickListener(v -> {
+            mPresenter.sweepCode("111");
+        });
+    }
 }

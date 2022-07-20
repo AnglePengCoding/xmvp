@@ -70,6 +70,7 @@ dependencies {
     api 'com.github.azhon:AppUpdate:4.2.0'
     api 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
     api 'com.github.tbruyelle:rxpermissions:0.12'
+    api 'com.github.BenShanYang:LoadingDialog:1.0.1'
 }
 
 afterEvaluate {
