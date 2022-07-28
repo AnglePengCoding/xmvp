@@ -15,6 +15,8 @@
 <h4>  9：屏幕适配</h4>
 <h4>  10：app下载更新</h4>
 <h4>  11：RxBinding 控件点击防抖动</h4>
+<h4>  12：无需再写shape.xml</h4>
+
 <h3>如何使用？</h3>
 
 <h3> Step 1.  在工程目录加入settings.gradle </h3>
@@ -69,6 +71,8 @@ maven{url'https://jitpack.io'}
 <h3> 权限申请 </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/qx.md">权限申请</a></p>
 
+<h3> 无需再写shape.xml </h3>
+<p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/shape.md">权限申请</a></p>
 
 <h3> 存储数据/登录用户token信息使用 </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/store.md">存储数据/登录用户token信息使用</a></p>

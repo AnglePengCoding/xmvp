@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import com.github.anglepengcoding.mvp.base.BaseActivity;
 import com.github.anglepengcoding.mvp.base.BaseFragment;
+import com.github.anglepengcoding.mvp.utils.camera.YPermissionsUtils;
+import com.github.anglepengcoding.mvp.utils.camera.onRequestPermissionsListener;
 import com.github.anglepengcoding.mvp.utils.dialog.ProgressDialogUtils;
 import com.github.anglepengcoding.xmvp.databinding.FragmentSoilBinding;
 import com.tbruyelle.rxpermissions3.Permission;

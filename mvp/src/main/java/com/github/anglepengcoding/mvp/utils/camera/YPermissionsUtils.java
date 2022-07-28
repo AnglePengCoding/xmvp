@@ -24,6 +24,17 @@ public class YPermissionsUtils {
             onRequestPermissionsListener.onRequestLater();
         }
     }
+
+    //请求位置权限
+    public static void requestLocation(Context mContext, onRequestPermissionsListener onRequestPermissionsListener) {
+        if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) mContext, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+            onRequestPermissionsListener.onRequestBefore();
+        } else {
+            onRequestPermissionsListener.onRequestLater();
+        }
+    }
+
     //打电话权限
     public static void requestCall(Context mContext, onRequestPermissionsListener onRequestPermissionsListener) {
         if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

@@ -71,6 +71,7 @@ dependencies {
     api 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
     api 'com.github.tbruyelle:rxpermissions:0.12'
     api 'com.github.BenShanYang:LoadingDialog:1.0.1'
+    api 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.4'
 }
 
 afterEvaluate {
