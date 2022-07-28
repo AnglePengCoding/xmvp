@@ -72,7 +72,7 @@ maven{url'https://jitpack.io'}
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/qx.md">权限申请</a></p>
 
 <h3> 无需再写shape.xml </h3>
-<p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/shape.md">权限申请</a></p>
+<p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/shape.md">无需再写shape</a></p>
 
 <h3> 存储数据/登录用户token信息使用 </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/store.md">存储数据/登录用户token信息使用</a></p>
