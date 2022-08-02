@@ -60,16 +60,13 @@ maven{url'https://jitpack.io'}
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/pic.md">图片加载使用</a></p>
 
 <h3> 相机使用 </h3>
-<p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/camera.md">相机使用</a></p>
+<p dir="auto"><a href="https://github.com/AnglePengCoding/take_phone_lib">take_phone_lib</a></p>
 
 <h3> 结构体重构 </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/jgt.md">结构体重构</a></p>
 
 <h3> 获取定位 </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/location.md">获取定位</a></p>
-
-<h3> 权限申请 </h3>
-<p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/qx.md">权限申请</a></p>
 
 <h3> 无需再写shape.xml </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/shape.md">无需再写shape</a></p>
@@ -78,8 +75,7 @@ maven{url'https://jitpack.io'}
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/store.md">存储数据/登录用户token信息使用</a></p>
 
 <h3> 多图上传 </h3>
-<p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/full.md">多图上传</a></p>
-
+<p dir="auto"><a href="https://github.com/AnglePengCoding/take_phone_lib">take_phone_lib</a></p>
 
 <h3> app更新下载 </h3>
 <p dir="auto"><a href="https://github.com/AnglePengCoding/xmvp/blob/main/readme/up.md">app更新下载</a></p>

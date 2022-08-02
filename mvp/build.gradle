@@ -63,8 +63,6 @@ dependencies {
     api 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     api 'com.github.li-xiaojun:XPopup:2.7.5'
     api 'com.contrarywind:Android-PickerView:4.1.9'
-    api 'io.github.lucksiege:pictureselector:v3.0.5'
-    api 'io.github.lucksiege:compress:v3.0.5'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
     api 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
     api 'com.github.azhon:AppUpdate:4.2.0'
@@ -72,6 +70,7 @@ dependencies {
     api 'com.github.tbruyelle:rxpermissions:0.12'
     api 'com.github.BenShanYang:LoadingDialog:1.0.1'
     api 'com.github.JavaNoober.BackgroundLibrary:libraryx:1.7.4'
+    api 'com.github.AnglePengCoding:take_phone_lib:1.2.1'
 }
 
 afterEvaluate {
